@@ -7,16 +7,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  
-  outputs = inputs: {
-    homeManagerConfigurations = {
-      linux = inputs.home-manager.lib.homeManagerConfiguration {
-        configuration = ./home-linux.nix;
-        system = "x86_64-linux";
-        homeDirectory = "/home/plumps";
-        username = "plumps";
+
+  outputs = { home-manager, nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+      {
+        homeManagerConfigurations = {
+          linux = home-manager.lib.homeManagerConfiguration {
+            configuration = ./home-linux.nix;
+            system = system;
+            homeDirectory = "/home/plumps";
+            username = "plumps";
+          };
+        };
+        devShell.${system} = pkgs.mkShell {
+          shellHook = ''
+            up () {
+              nix build .#homeManagerConfigurations.linux.activationPackage && ./result/activate
+            }
+          '';
+        };
       };
-    };
-  };
-    
+
 }

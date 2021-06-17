@@ -1,7 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    bat
+    fd
     jq
+    ripgrep
     tree
     htop
 
