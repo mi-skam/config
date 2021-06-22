@@ -23,7 +23,8 @@
           };
         };
         devShell.${system} = pkgs.mkShell {
-          shellHook = ''
+	 description = "hm-shell"; 
+         shellHook = ''
             up () {
               nix build .#homeManagerConfigurations.linux.activationPackage && ./result/activate
             }

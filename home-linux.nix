@@ -5,12 +5,15 @@
   };
 
   home.packages = with pkgs; [
+    bash-completion
     bat
     fd
     jq
+    ranger
     ripgrep
     tree
     htop
+    unzip
 
     nixUnstable
     nixpkgs-fmt # nix code formatter
@@ -27,6 +30,14 @@
       profileExtra = ''
         . /home/plumps/.nix-profile/etc/profile.d/nix.sh
       '';
+    };
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv = {
+        enable = true;
+	enableFlakes = true;
+      };
     };
     emacs = {
       enable = true;
