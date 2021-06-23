@@ -47,5 +47,14 @@
       userName = "mi-skam";
       userEmail = "maksim.codes@mailbox.org";
     };
+    gpg = {
+      enable = true;
+    };
+  };
+  services = {
+    gpg-agent = {
+      enable = true;
+      pinentryFlavor = "tty";
+    };
   };
 }
