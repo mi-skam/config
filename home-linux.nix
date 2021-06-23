@@ -46,6 +46,7 @@
       enable = true;
       userName = "mi-skam";
       userEmail = "maksim.codes@mailbox.org";
+      signing.key = "8DFFF673";
     };
     gpg = {
       enable = true;
