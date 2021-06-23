@@ -12,6 +12,10 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      up = pkgs.writeScriptBin "up" ''
+        #!${pkgs.stdenv.shell}
+	nix build .#homeManagerConfigurations.linux.activationPackage && ./result/activate
+      '';
     in
       {
         homeManagerConfigurations = {
@@ -23,13 +27,9 @@
           };
         };
         devShell.${system} = pkgs.mkShell {
-	 description = "hm-shell"; 
-         shellHook = ''
-            up () {
-              nix build .#homeManagerConfigurations.linux.activationPackage && ./result/activate
-            }
-          '';
-        };
+	 description = "hm-shell";
+	 nativeBuildInputs = [ pkgs.bashInteractive ];
+	 buildInputs = [ up ];
+	};
       };
-
 }
