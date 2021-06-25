@@ -52,11 +52,21 @@
     emacs = {
       enable = true;
     };
+    gh = {
+      enable = true;
+    };
     git = {
       enable = true;
       userName = "mi-skam";
       userEmail = "maksim.codes@mailbox.org";
       signing.key = "8DFFF673";
+      aliases = {
+        co = "checkout";
+        s = "status";
+        p = "pull";
+        c = "commit -S";
+        l = "log --oneline";
+      };
     };
     gpg = {
       enable = true;
