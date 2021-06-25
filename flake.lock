@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1624214437,
-        "narHash": "sha256-BtB6k1mQXG/P8MUlNVcuboQqlxlks2H6i5vj2pbGa3Y=",
+        "lastModified": 1624612706,
+        "narHash": "sha256-HfuNvpN/T8TZrOTyjbLCjI4GqbYuQ5oAWZO/4T2Mj34=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "cd11c02c286a996ff55010146baecae4c413634f",
+        "rev": "0ada50fc9c620f7ad9f7c6ff70bf40514f4400a9",
         "type": "github"
       },
       "original": {
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1624267569,
-        "narHash": "sha256-hBzA7r9D9jk/9E3xxsIZYrANDItUajSm8oPFN0+qxjI=",
+        "lastModified": 1624614923,
+        "narHash": "sha256-CxYbcwlVEA6mjyWbsXsJfBU2wLIx0ovVMdHGd6hAkaA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "30d6de540436ec206676aab38c94125a724659b0",
+        "rev": "9ce8d79b3f6c6516bbfef4105ba75a82d27a16f8",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,28 @@
         "type": "github"
       }
     },
+    "npiperelay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "narHash": "sha256-+okYixPbPgnZx9zqjbdMPRQl+fqYqV0Q3fWSRNGUvOY=",
+        "path": "./npiperelay",
+        "type": "path"
+      },
+      "original": {
+        "path": "./npiperelay",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "npiperelay": "npiperelay"
       }
     }
   },
