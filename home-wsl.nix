@@ -74,6 +74,7 @@
           defaultBranch = "main";
         };
       };
+      lfs.enable = true;
     };
     gpg = {
       enable = true;

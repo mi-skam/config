@@ -34,8 +34,8 @@
         };
         devShell.${system} = pkgs.mkShell {
           description = "hm-shell";
-          nativeBuildInputs = [ pkgs.bashInteractive ];
-          buildInputs = [ up ];
-        };
+          nativeBuildInputs = with pkgs; [ bashInteractive up nixfmt ];
+	};
       };
 }
+    
