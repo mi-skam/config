@@ -2,10 +2,12 @@
 {
   home.sessionVariables = {
     EDITOR = "emacs";
+    PS1 = "\\u@\\h:\\w\\$ ";
   };
 
   home.packages = with pkgs; [
-    bash-completion
+    # utils
+    bashInteractive
     bat
     fd
     jq
@@ -15,11 +17,17 @@
     htop
     unzip
 
+    # nix
     nixUnstable
     nixpkgs-fmt # nix code formatter
     rnix-lsp # nix language server
 
+    # multimedia
+    asciinema
     youtube-dl
+
+    # security
+    metasploit
   ];
 
   programs = {
@@ -55,6 +63,11 @@
     };
     gh = {
       enable = true;
+      aliases = {
+        co = "pr checkout";
+        pv = "pr view";
+      };
+      gitProtocol = "ssh";
     };
     git = {
       enable = true;
