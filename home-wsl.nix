@@ -1,4 +1,13 @@
 { pkgs, ... }:
+
+let
+  "wslNotify" = pkgs.writeShellScriptBin "wsl-notify" ''
+    #!/usr/bin/env -bash
+
+    pwsh.exe -C "New-BurntToastNotification -Text \"$1\""
+  '';
+
+in
 {
   home.sessionVariables = {
     EDITOR = "emacs";
@@ -28,6 +37,9 @@
 
     # security
     metasploit
+
+    # wsl
+    wslNotify
   ];
 
   programs = {

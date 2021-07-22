@@ -1,8 +1,10 @@
 #!/bin/sh
 
-## TODO: needs to be reworked for WSL!
+## Requires BurnToast to be installed and imported
+## Install-Module -Name BurntToast
 
 FILE="$1"
+
 
 if [ -z "$1" ]
 then
@@ -11,12 +13,12 @@ then
 fi
                 
                 
-MD5=$(md5 -b "$1" | awk '{ print $NF }' | tr -d '/+=' )
-NAME=${MD5}.${FILE##*.}
+MD5=$(md5sum -b "$1" | awk '{ print $1 }')
+NAME=${MD5}-$(basename $FILE)
 
-scp -P 22022 $FILE maksim@pub.miskam.xyz:/webroot/pub.miskam.xyz/i/${NAME}
+scp -P 22022 $FILE maksim@pub.miskam.xyz:/webroot/pub.miskam.xyz/f/${NAME}
 
 URL="https://pub.miskam.xyz/f/${NAME}"
-echo -n "$URL" | xclip -selection clipboard
+echo -n "$URL" | clip.exe
 
-notify-send -u low "$URL"
+wsl-notify "$URL" 
