@@ -14,9 +14,9 @@ fi
                 
                 
 MD5=$(md5sum -b "$1" | awk '{ print $1 }')
-NAME=${MD5}-$(basename $FILE)
+NAME=${MD5}.${FILE##*.}
 
-scp -P 22022 $FILE maksim@pub.miskam.xyz:/webroot/pub.miskam.xyz/f/${NAME}
+scp -P 22022 "${FILE}" maksim@pub.miskam.xyz:/webroot/pub.miskam.xyz/f/"${NAME}"
 
 URL="https://pub.miskam.xyz/f/${NAME}"
 echo -n "$URL" | clip.exe
