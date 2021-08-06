@@ -11,7 +11,7 @@
           pname = "npiperelay";
           version = "0.1.0";
           src = pkgs.fetchurl {
-            url = "https://github.com/jstarks/npiperelay/releases/download/${version}/npiperelay_windows_amd64.zip";
+            url = "https://github.com/jstarks/npiperelay/releases/download/v${version}/npiperelay_windows_amd64.zip";
             sha256 = "1xp59iv1wp92yhxzqrxcd7kdmcyfbn0lvmd3m43kbh0pzlgzd7kb";
           };
           nativeBuildInputs = with pkgs; [ unzip ];
