@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1627592512,
-        "narHash": "sha256-+bauwACGl+/dTQB047XImRz5P6Lp6vxl5ruiKjtENxo=",
+        "lastModified": 1628468976,
+        "narHash": "sha256-NHgYsXZuLWEePrC+65b8EtKQg714H9NB7cO4BM4V5JQ=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "7f976da06840c268cc291a021bab7532b923713c",
+        "rev": "2c4234cb79684646657f9cfcd4075c3122845670",
         "type": "github"
       },
       "original": {
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1628240378,
-        "narHash": "sha256-9O8xMjWP8Upo9Je6WImXfxxLbfwGtoxmdsEPLXvA4KE=",
+        "lastModified": 1628537093,
+        "narHash": "sha256-jJ8vZ9AAHN7olsBEJxLj+Ur5jO/oqwRdduwAWJA3zHg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9994d6d607a711f45fd62e192fac240c92b41d3e",
+        "rev": "20bcb6cc0d964372f9e79b65251ea91bdf848a69",
         "type": "github"
       },
       "original": {
@@ -58,7 +58,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-zhTYQSXJHpqg/DFsux5YbX+cgUSqKf35jxIsBmZnpgg=",
+        "narHash": "sha256-Sc0Rk9o9SANSITxBSfuIIy7rZQLVV61GZtZeVc9h3g8=",
         "path": "./npiperelay",
         "type": "path"
       },
