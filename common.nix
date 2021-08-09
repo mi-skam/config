@@ -19,16 +19,13 @@
     unzip
 
     # nix
-    nixUnstable
+
     nixpkgs-fmt # nix code formatter
     rnix-lsp # nix language server
 
     # multimedia
-    asciinema
     youtube-dl
 
-    # security
-    # metasploit
 
   ];
 
