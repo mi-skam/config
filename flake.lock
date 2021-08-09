@@ -58,7 +58,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-+okYixPbPgnZx9zqjbdMPRQl+fqYqV0Q3fWSRNGUvOY=",
+        "narHash": "sha256-zhTYQSXJHpqg/DFsux5YbX+cgUSqKf35jxIsBmZnpgg=",
         "path": "./npiperelay",
         "type": "path"
       },
