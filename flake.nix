@@ -25,7 +25,7 @@
       {
         homeManagerConfigurations = {
           linux = home-manager.lib.homeManagerConfiguration {
-            configuration = ./home-wsl.nix;
+            configuration = ./home.nix;
             system = system;
             homeDirectory = "/home/plumps";
             username = "plumps";
