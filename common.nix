@@ -36,6 +36,10 @@
     };
     bash = {
       enable = true;
+      initExtra = ''
+        export FZF_DEFAULT_COMMAND='${pkgs.ripgrep}/bin/rg --files --follow --hidden'
+      '';
+
     };
     direnv = {
       enable = true;
@@ -83,12 +87,21 @@
     neovim = {
       enable = true;
       vimAlias = true;
-      plugins = with pkgs.vimPlugins; [ ale vim-polyglot ];
+      plugins = with pkgs.vimPlugins; [ ale fzf-vim vim-polyglot ];
       coc = {
         enable = true;
       };
       extraConfig = ''
+        " g
+        let mapleader = ","
+        " mouse
+        set mouse=a
+        " Fix the code
         nmap <F6> :ALEFix<CR>
+        " FZF
+        nnoremap <Leader>p :GFiles<CR>
+        nnoremap <Leader>b :Buffers<CR>
+        nnoremap <Leader>h :History<CR>
       '';
     };
   };

@@ -37,5 +37,21 @@ in
         . /home/plumps/.nix-profile/etc/profile.d/nix.sh
       '';
     };
+    # needs win32yank.exe in PATH of wsl instance
+    neovim.extraConfig = ''
+      set clipboard+=unnamedplus
+      let g:clipboard = {
+          \   'name': 'win32yank-wsl',
+          \   'copy': {
+          \      '+': 'win32yank.exe -i --crlf',
+          \      '*': 'win32yank.exe -i --crlf',
+          \    },
+          \   'paste': {
+          \      '+': 'win32yank.exe -o --lf',
+          \      '*': 'win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 0,
+          \ }
+      '';
   };
 }
