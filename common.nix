@@ -2,7 +2,7 @@
 
 {
   home.sessionVariables = {
-    EDITOR = "emacs";
+    EDITOR = "vim";
     PS1 = "\\u@\\h:\\w\\$ ";
   };
 
@@ -78,6 +78,14 @@
     };
     gpg = {
       enable = true;
+    };
+    neovim = {
+      enable = true;
+      vimAlias = true;
+      plugins = with pkgs.vimPlugins; [ ale vim-polyglot ];
+      coc = {
+        enable = true;
+      };
     };
   };
   services = {
