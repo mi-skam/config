@@ -66,6 +66,7 @@
         s = "status";
         p = "pull";
         c = "commit -S";
+        d = "diff";
         l = "log --oneline";
       };
       delta.enable = true;
@@ -86,8 +87,17 @@
       coc = {
         enable = true;
       };
+      extraConfig = ''
+        nmap <F6> :ALEFix<CR>
+      '';
     };
   };
+  xdg.configFile."nvim/ftplugin/javascript.vim".text = ''
+    " Fix files with prettier, and then ESLint.
+    let b:ale_fixers = ['prettier', 'eslint']
+    " Equivalent to the above.
+    let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+    '';
   services = {
     gpg-agent = {
       enable = true;
