@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     # utils
     bashInteractive
+    moreutils
     bat
     fd
     jq
@@ -22,6 +23,8 @@
 
     nixpkgs-fmt # nix code formatter
     rnix-lsp # nix language server
+    yarn
+    yarn2nix
 
     # multimedia
     youtube-dl
@@ -33,6 +36,7 @@
     autojump = {
       enable = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
     };
     bash = {
       enable = true;
@@ -52,13 +56,22 @@
     emacs = {
       enable = true;
     };
+    fish = {
+      enable = true;
+      shellInit = ''
+        export FZF_DEFAULT_COMMAND='${pkgs.ripgrep}/bin/rg --files --follow --hidden'
+      '';
+    };
     gh = {
       enable = true;
-      aliases = {
-        co = "pr checkout";
-        pv = "pr view";
+      settings = {
+          aliases = {
+            co = "pr checkout";
+            pv = "pr view";
+            cr = "repo create";
+            };
+          git_protocol = "ssh";
       };
-      gitProtocol = "ssh";
     };
     git = {
       enable = true;
@@ -78,6 +91,7 @@
         init = {
           defaultBranch = "main";
         };
+        push.default = "current";
       };
       lfs.enable = true;
     };

@@ -32,6 +32,7 @@ in
             rm -f $SSH_AUTH_SOCK
             (setsid ${pkgs.socat}/bin/socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"${pkgs.npiperelay}/bin/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &) >/dev/null 2>&1
         fi       
+        eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/Users/plumps/Documents/WindowsPowerShell/prompt.json)"
       '';
       profileExtra = ''
         . /home/plumps/.nix-profile/etc/profile.d/nix.sh

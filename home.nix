@@ -1,1 +1,1 @@
-home-nixos.nix
+home-wsl.nix
